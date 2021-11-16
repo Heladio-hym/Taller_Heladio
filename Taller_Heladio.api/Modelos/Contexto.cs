@@ -13,5 +13,8 @@ namespace Taller_Heladio.api.Modelos
         {
 
         }
+
+        public DbSet<Marca>  Marca { get;  set; }
+        public DbSet<Servicios> Servicios { get; set; }
     }
 }
