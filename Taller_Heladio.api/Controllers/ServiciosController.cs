@@ -38,7 +38,7 @@ namespace Taller_Heladio.api.Controllers
             var modificar = _bd.Servicios.Find(id);
             return Ok(modificar);
         }
-
+        [HttpDelete]
         public IActionResult Borrar(int id)
         {
             var borrar = _bd.Servicios.Find(id);

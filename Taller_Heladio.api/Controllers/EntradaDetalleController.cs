@@ -10,41 +10,41 @@ namespace Taller_Heladio.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MarcasController : ControllerBase
+    public class EntradaDetalleController : ControllerBase
     {
         private readonly Contexto _bd;
 
-        public MarcasController(Contexto contexto)
+        public EntradaDetalleController(Contexto contexto)
         {
             _bd = contexto;
         }
         [HttpGet]
         public IActionResult Listar()
         {
-            var lista = _bd.Marca;
+            var lista = _bd.EntradaDetalle;
             return Ok(lista);
         }
         [HttpPost]
-        public IActionResult Guardar(Marca obj)
+        public IActionResult Guardar(EntradaDetalle obj)
         {
-            _bd.Marca.Add(obj);
+            _bd.EntradaDetalle.Add(obj);
             _bd.SaveChanges();
             return Ok(obj);
         }
         [HttpPut]
-        public IActionResult Modificar(Marca obj, int id)
+        public IActionResult Modificar(EntradaDetalle obj, int id)
         {
 
-            var modificar = _bd.Marca.Find(id);
+            var modificar = _bd.EntradaDetalle.Find(id);
             return Ok(modificar);
-    }
+        }
         [HttpDelete]
         public IActionResult Borrar(int id)
         {
-            var borrar = _bd.Marca.Find(id);
-            _bd.Marca.Remove(borrar);
+            var borrar = _bd.EntradaDetalle.Find(id);
+            _bd.EntradaDetalle.Remove(borrar);
             _bd.SaveChanges();
             return Ok(borrar);
         }
     }
-} 
+}

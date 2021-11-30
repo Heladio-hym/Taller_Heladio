@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace Taller_Heladio.api.Modelos
 {
-    
-    public class Marca
+    public class Color
     {
         [Key]
-        public int IdMarca { get; set; }
-        public int Nombre { get; set; }
+        public int IdColor { get; set; }
+        [MaxLength(30)]
         [Required]
-        [MaxLength]
+        public String Nombre { get; set; }
+
+        [Required]
         public bool Activo { get; set; }
 
         public virtual List<Vehiculo> Vehiculo { get; set; }
-
-
     }
 }
