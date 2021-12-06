@@ -4,11 +4,25 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Taller_Heladio.api.DTOS;
 
 namespace Taller_Heladio.api.Modelos
 {
     public class EntradaDetalle
     {
+        public EntradaDetalle()
+        {
+
+        }
+
+        public EntradaDetalle(EntradaDetalleDTO nuevo)
+        {
+            this.IdRefaccion = nuevo.IdRefaccion;
+            this.Cantidad = nuevo.Cantidad;
+            this.Precio = nuevo.Precio;
+            this.Activo = true;
+        }
+
         [Key]
         public int IdEntradaDetalle { get; set; }
 
@@ -18,7 +32,6 @@ namespace Taller_Heladio.api.Modelos
         public int IdRefaccion { get; set; }
 
         [Required]
-        [Range(0, double.MaxValue)]
         public double Cantidad { get; set; }
         
         [Required]

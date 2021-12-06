@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Taller_Heladio.api.DTOS;
 using Taller_Heladio.api.Modelos;
 
 namespace Taller_Heladio.api.Controllers
@@ -25,9 +26,9 @@ namespace Taller_Heladio.api.Controllers
             return Ok(lista);
         }
         [HttpPost]
-        public IActionResult Guardar(Entrada obj)
+        public IActionResult Guardar(EntradaDTO obj)
         {
-            _bd.Entrada.Add(obj);
+            _bd.Entrada.Add(new Entrada( obj));
             _bd.SaveChanges();
             return Ok(obj);
         }
