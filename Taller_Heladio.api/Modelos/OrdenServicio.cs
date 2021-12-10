@@ -32,12 +32,12 @@ namespace Taller_Heladio.api.Modelos
         public bool Activo { get; set; }
 
         [ForeignKey("IdCliente")]
-        public virtual List<Cliente> Cliente { get; set; }
+        public virtual Cliente Cliente { get; set; }
 
         [ForeignKey("IdMecanico")]
-        public virtual List<Mecanico> Mecanico { get; set; }
+        public virtual Mecanico Mecanico { get; set; }
         [ForeignKey("IdVeiculo")]
-        public virtual List<Vehiculo> Vehiculo { get; set; }
+        public virtual Vehiculo Vehiculo { get; set; }
         public virtual List<OrdenServicioDetalle> OrdenServicioDetalle { get; set; }
 
     }

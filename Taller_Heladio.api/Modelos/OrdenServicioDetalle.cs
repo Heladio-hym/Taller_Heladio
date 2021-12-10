@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,8 +14,9 @@ namespace Taller_Heladio.api.Modelos
         public int IdOrdenServicioDetalle { get; set; }
 
         [Required]
-        public int IdOrden { get; set; }
+        public int IdOrdenServicio { get; set; }
 
+        public int IdServicios { get; set; }
         [Required]
         public decimal Cantidad { get; set; }
 
@@ -29,6 +31,12 @@ namespace Taller_Heladio.api.Modelos
 
         [Required]
         public bool Activo { get; set; }
+
+
+        [ForeignKey("IdOrdenServicio")]
+        public virtual OrdenServicio OrdenServicio { get; set; }
+        [ForeignKey("IdServicios")]
+        public virtual Servicios Servicios { get; set; }
 
     }
 }
